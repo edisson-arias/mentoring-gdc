@@ -20,7 +20,7 @@ public class Game {
         
         data.setFizz(getInputAsInteger("Enter the Buzz Number: ", "Buzz set to: ", input, validator));
         
-        data.setFizzName(getInputAsString("Enter first word: ", "Second word set to: ", input, validator));
+        data.setFizzName(getInputAsString("Enter the first word: ", "First word set to: ", input, validator));
 
         data.setBuzzName(getInputAsString("Enter the second word: ", "Second word set to: ", input, validator));
 
