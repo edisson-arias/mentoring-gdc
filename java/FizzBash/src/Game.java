@@ -78,16 +78,25 @@ public class Game {
         // TODO: start default
 
 ////////// Phase 4 (SETUP)
+        System.out.println("Enter the amount of numbers: ");
+        data.setLimit(input.getSetupInputInt());
+        System.out.println("Limit set to: " + data.getLimit());
 
-        data.setLimit(input.getSetupInputInt("Enter the amount of numbers: ", "Limit set to: "));
-        
-        data.setBuzz(input.getSetupInputInt("Enter the Fizz Number: ", "Fizz set to: "));
-        
-        data.setFizz(input.getSetupInputInt("Enter the Buzz Number: ", "Buzz set to: "));
-        
-        data.setFizzName(input.getSetupInputString("Enter the first word: ", "First word set to: "));
+        System.out.println("Enter the Fizz Number: ");
+        data.setFizz(input.getSetupInputInt());
+        System.out.println("Fizz set to: " + data.getFizz());
 
-        data.setBuzzName(input.getSetupInputString("Enter the second word: ", "Second word set to: "));
+        System.out.println("Enter the Buzz Number: ");
+        data.setBuzz(input.getSetupInputInt());
+        System.out.println("Buzz set to: " + data.getBuzz());
+
+        System.out.println("Enter the first word: ");
+        data.setFizzName(input.getSetupInputString());
+        System.out.println("First word set to: " + data.getFizzName());
+
+        System.out.println("Enter the second word: ");
+        data.setBuzzName(input.getSetupInputString());
+        System.out.println("Second word set to: " + data.getBuzzName());
 
 ////////// Phase 5 (ALGORITHM)
 
@@ -96,10 +105,5 @@ public class Game {
 
         Algorithm.startAlgorithm(data);
     }
-
-    
-
-
-    
 
 }

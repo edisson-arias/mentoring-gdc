@@ -14,16 +14,14 @@ public class inputHandler {
     }
 
 
-    public int getSetupInputInt(String askString, String outputString) {
+    public int getSetupInputInt() {
         boolean loopGuard = true;
         String current;
         int result = -1;
         while(loopGuard) {                                                     
-            System.out.println(askString);
             current = getRawInput();
                 if(validator.isNumValid(current)) {
                     result = Integer.parseInt(current);
-                    System.out.println(outputString + " " + result);
                     loopGuard = false;
                 } else {
                     loopGuard = true;
@@ -32,20 +30,18 @@ public class inputHandler {
         return result;
     }
 
-    public String getSetupInputString(String askString, String outputString) {
+    public String getSetupInputString() {
         boolean loopGuard = true;
         String current;
         String result = "";
         
         while(loopGuard) {                                                     
-            System.out.println(askString);
             current = getRawInput();
                 if(validator.isStringValid(current)) {
 
                         result = current;
                     
                     result = current;
-                    System.out.println(outputString + " " + result);
                     loopGuard = false;
                 } else {
                     loopGuard = true;
