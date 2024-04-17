@@ -7,24 +7,65 @@ public class Game {
        // Phase 1 
 
         inputHandler input = new inputHandler();
-        Validator validator = new Validator();
 
         System.out.println("=================== WELCOME TO FIZZBUZZ ===================");
         System.out.println("-----------------------------------------------------------");
 
+        System.out.println("You can either start with Default values");
+        System.out.println("Or set your own values for the game");
+
+        System.out.println("Enter 'start' to begin the game with the default values");
+        /* if start
+         *
+         * ask for limit
+         * 
+         * do phase 2
+         *      data.setBuzz(3);
+         *      data.setFizz(5);
+         *      data.setFizzName("Fizz");
+         *      data.setBuzzName("Buzz");
+         * 
+         * do phase 4
+         *      Algorithm.startAlgorithm(data);
+         */
+        System.out.println("Enter 'setup' to set your own values for the game");
+        /* if setup
+         * 
+         * do phase 3
+         *      ask for limit
+         *      ask for fizz
+         *      ask for buzz
+         *      ask for fizzName
+         *      ask for buzzName
+         * 
+         * do phase 4
+         *      Algorithm.startAlgorithm(data);
+         */
+        System.out.println("Enter 'exit' to quit the game");
+        /* if exit
+         * 
+         * do phase 0
+         *    System.exit(0);
+         * 
+         */
+
         // Phase 2
 
-        data.setLimit(getInputAsInteger("Enter the amount of numbers: ", "Limit set to: ", input, validator));
-        
-        data.setBuzz(getInputAsInteger("Enter the Fizz Number: ", "Fizz set to: ", input, validator));
-        
-        data.setFizz(getInputAsInteger("Enter the Buzz Number: ", "Buzz set to: ", input, validator));
-        
-        data.setFizzName(getInputAsString("Enter the first word: ", "First word set to: ", input, validator));
-
-        data.setBuzzName(getInputAsString("Enter the second word: ", "Second word set to: ", input, validator));
+        // TODO: start default
 
         // Phase 3
+
+        data.setLimit(input.getInputAsInteger("Enter the amount of numbers: ", "Limit set to: "));
+        
+        data.setBuzz(input.getInputAsInteger("Enter the Fizz Number: ", "Fizz set to: "));
+        
+        data.setFizz(input.getInputAsInteger("Enter the Buzz Number: ", "Buzz set to: "));
+        
+        data.setFizzName(input.getInputAsString("Enter the first word: ", "First word set to: "));
+
+        data.setBuzzName(input.getInputAsString("Enter the second word: ", "Second word set to: "));
+
+        // Phase 4
 
         System.out.println("=================== INPUTS REGISTERED ===================");
         System.out.println("---------------------------------------------------------");
@@ -32,45 +73,7 @@ public class Game {
         Algorithm.startAlgorithm(data);
     }
 
-    public int getInputAsInteger(String ask, String setMessage, inputHandler input, Validator validator) {
-        boolean loopGuard = true;
-        String current;
-        int result = -1;
-        while(loopGuard) {                                                     
-            System.out.println(ask);
-            current = input.getUserInput();
-                if(validator.isNumValid(current)) {
-                    result = Integer.parseInt(current);
-                    System.out.println(setMessage + " " + result);
-                    loopGuard = false;
-                } else {
-                    loopGuard = true;
-                }
-        }
-        return result;
-    }
-
-    public String getInputAsString(String ask, String setMessage, inputHandler input, Validator validator) {
-        boolean loopGuard = true;
-        String current;
-        String result = "";
-        
-        while(loopGuard) {                                                     
-            System.out.println(ask);
-            current = input.getUserInput();
-                if(validator.isStringValid(current)) {
-
-                        result = current;
-                    
-                    result = current;
-                    System.out.println(setMessage + " " + result);
-                    loopGuard = false;
-                } else {
-                    loopGuard = true;
-                }
-        }
-        return result;
-    }
+    
 
 
     
