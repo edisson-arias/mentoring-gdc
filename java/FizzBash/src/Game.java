@@ -3,80 +3,28 @@ public class Game {
     Data data = new Data();
 
     public void startGame() {
+
+       // Phase 1 
+
         inputHandler input = new inputHandler();
         Validator validator = new Validator();
-        boolean loopGuard = true;
-        String current;
 
         System.out.println("=================== WELCOME TO FIZZBUZZ ===================");
         System.out.println("-----------------------------------------------------------");
 
-        data.setLimit(getInputAsInteger("Enter the amount of numbers", "Limit set to: ", input, validator));
-        loopGuard = true;
+        // Phase 2
 
+        data.setLimit(getInputAsInteger("Enter the amount of numbers: ", "Limit set to: ", input, validator));
         
-        while(loopGuard) {                                                      // Have Phases instead of while loops (Phases.java)
-            System.out.println("Enter the Fizz Number: ");
-            current = input.getUserInput();
-            if(loopGuard = validator.isNumValid(current)) {
-                data.setFizz(Integer.parseInt(current));
-                System.out.println("Fizz set to: " + data.getFizz());
-                loopGuard = false;
-            } else {
-                loopGuard = true;
-            }
-        }
-        loopGuard = true;
-
+        data.setBuzz(getInputAsInteger("Enter the Fizz Number: ", "Fizz set to: ", input, validator));
         
-        while(loopGuard) {                                                      // Have Phases instead of while loops (Phases.java)
-            System.out.println("Enter the Buzz Number: ");
-            current = input.getUserInput();
-            if(loopGuard = validator.isNumValid(current)) {
-                data.setBuzz(Integer.parseInt(current));
-                System.out.println("Buzz set to: " + data.getBuzz());
-                loopGuard = false;
-            } else {
-                loopGuard = true;
-            }
-        }
-        loopGuard = true;
-            
+        data.setFizz(getInputAsInteger("Enter the Buzz Number: ", "Buzz set to: ", input, validator));
+        
+        data.setFizzName(getInputAsString("Enter first word: ", "Second word set to: ", input, validator));
 
-        while(loopGuard) {                                                       // Have Phases instead of while loops (Phases.java)
-            System.out.println("Enter first word: ");
-            current = input.getUserInput();
-            if(loopGuard = validator.isStringValid(current)) {
-                if(data.getFizzName() == null) {
-                    data.setFizzName("Fizz");
-                } else {
-                    data.setFizzName(current);
-                }
-                System.out.println("Fizz set to: " + data.getBuzz());
-                loopGuard = false;
-            } else {
-                loopGuard = true;
-            }
-        }
-        loopGuard = true;
+        data.setBuzzName(getInputAsString("Enter the second word: ", "Second word set to: ", input, validator));
 
-        while(loopGuard) {                                                      // Have Phases instead of while loops (Phases.java)
-            System.out.println("Enter second word: ");
-            current = input.getUserInput();
-            if(loopGuard = validator.isStringValid(current)) {
-                if(data.getBuzzName() == null) {
-                    data.setBuzzName("Buzz");
-                } else {
-                    data.setBuzzName(current);
-                }
-                System.out.println("Buzz set to: " + data.getBuzz());
-                loopGuard = false;
-            } else {
-                loopGuard = true;
-            }
-        }
-        loopGuard = true;
-
+        // Phase 3
 
         System.out.println("=================== INPUTS REGISTERED ===================");
         System.out.println("---------------------------------------------------------");
@@ -84,16 +32,37 @@ public class Game {
         Algorithm.startAlgorithm(data);
     }
 
-    public int getInputAsInteger(String ask, String setMessage, inputHandler input, Validator validator)
-    {
+    public int getInputAsInteger(String ask, String setMessage, inputHandler input, Validator validator) {
         boolean loopGuard = true;
         String current;
         int result = -1;
-        while(loopGuard) {                                                      // Have Phases instead of while loops (Phases.java)
+        while(loopGuard) {                                                     
             System.out.println(ask);
             current = input.getUserInput();
                 if(validator.isNumValid(current)) {
                     result = Integer.parseInt(current);
+                    System.out.println(setMessage + " " + result);
+                    loopGuard = false;
+                } else {
+                    loopGuard = true;
+                }
+        }
+        return result;
+    }
+
+    public String getInputAsString(String ask, String setMessage, inputHandler input, Validator validator) {
+        boolean loopGuard = true;
+        String current;
+        String result = "";
+        
+        while(loopGuard) {                                                     
+            System.out.println(ask);
+            current = input.getUserInput();
+                if(validator.isStringValid(current)) {
+
+                        result = current;
+                    
+                    result = current;
                     System.out.println(setMessage + " " + result);
                     loopGuard = false;
                 } else {
