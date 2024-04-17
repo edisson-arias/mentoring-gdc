@@ -55,15 +55,15 @@ public class Game {
 
         // Phase 3
 
-        data.setLimit(input.getInputAsInteger("Enter the amount of numbers: ", "Limit set to: "));
+        data.setLimit(input.getSetupInputInt("Enter the amount of numbers: ", "Limit set to: "));
         
-        data.setBuzz(input.getInputAsInteger("Enter the Fizz Number: ", "Fizz set to: "));
+        data.setBuzz(input.getSetupInputInt("Enter the Fizz Number: ", "Fizz set to: "));
         
-        data.setFizz(input.getInputAsInteger("Enter the Buzz Number: ", "Buzz set to: "));
+        data.setFizz(input.getSetupInputInt("Enter the Buzz Number: ", "Buzz set to: "));
         
-        data.setFizzName(input.getInputAsString("Enter the first word: ", "First word set to: "));
+        data.setFizzName(input.getSetupInputString("Enter the first word: ", "First word set to: "));
 
-        data.setBuzzName(input.getInputAsString("Enter the second word: ", "Second word set to: "));
+        data.setBuzzName(input.getSetupInputString("Enter the second word: ", "Second word set to: "));
 
         // Phase 4
 

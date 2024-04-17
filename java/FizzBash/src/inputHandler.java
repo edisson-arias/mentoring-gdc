@@ -9,21 +9,21 @@ public class inputHandler {
         userInput = new Scanner(System.in);
     }
 
-    public String getUserInput() {
+    public String getRawInput() {
         return userInput.nextLine();
     }
 
 
-    public int getInputAsInteger(String ask, String setMessage) {
+    public int getSetupInputInt(String askString, String outputString) {
         boolean loopGuard = true;
         String current;
         int result = -1;
         while(loopGuard) {                                                     
-            System.out.println(ask);
-            current = getUserInput();
+            System.out.println(askString);
+            current = getRawInput();
                 if(validator.isNumValid(current)) {
                     result = Integer.parseInt(current);
-                    System.out.println(setMessage + " " + result);
+                    System.out.println(outputString + " " + result);
                     loopGuard = false;
                 } else {
                     loopGuard = true;
@@ -32,20 +32,20 @@ public class inputHandler {
         return result;
     }
 
-    public String getInputAsString(String ask, String setMessage) {
+    public String getSetupInputString(String askString, String outputString) {
         boolean loopGuard = true;
         String current;
         String result = "";
         
         while(loopGuard) {                                                     
-            System.out.println(ask);
-            current = getUserInput();
+            System.out.println(askString);
+            current = getRawInput();
                 if(validator.isStringValid(current)) {
 
                         result = current;
                     
                     result = current;
-                    System.out.println(setMessage + " " + result);
+                    System.out.println(outputString + " " + result);
                     loopGuard = false;
                 } else {
                     loopGuard = true;
