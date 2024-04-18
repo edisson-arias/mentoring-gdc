@@ -2,6 +2,7 @@ public class Game {
 
     Data data = new Data();
 
+
     /*
      * Phases
      * 
@@ -20,6 +21,8 @@ public class Game {
      * 
      */
 
+
+
     public void startGame() {
 
 ////////// Phase 1 (START)
@@ -29,7 +32,8 @@ public class Game {
         System.out.println("=================== WELCOME TO FIZZBUZZ ===================");
         System.out.println("-----------------------------------------------------------");
         System.out.println("Enter 'start' to enter the game or Enter 'exit' to close the game.");
-        /* if start
+        
+		/* if start
          * 
          * do phase 2 (CONFIG)
          * 
@@ -78,6 +82,7 @@ public class Game {
         // TODO: start default
 
 ////////// Phase 4 (SETUP)
+
         System.out.println("Enter the amount of numbers: ");
         data.setLimit(input.getSetupInputInt());
         System.out.println("Limit set to: " + data.getLimit());
