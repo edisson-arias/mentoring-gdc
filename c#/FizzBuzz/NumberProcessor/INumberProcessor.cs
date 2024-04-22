@@ -1,4 +1,4 @@
-﻿namespace FizzBuzz
+﻿namespace FizzBuzz.NumberProcessor
 {
     internal interface INumberProcessor
     {

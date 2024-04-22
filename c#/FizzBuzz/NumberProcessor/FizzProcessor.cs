@@ -1,4 +1,6 @@
-﻿namespace FizzBuzz
+﻿using FizzBuzz.Parameters;
+
+namespace FizzBuzz.NumberProcessor
 {
     internal class FizzProcessor : INumberProcessor
     {

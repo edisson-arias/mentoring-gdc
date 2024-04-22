@@ -1,4 +1,6 @@
-﻿namespace FizzBuzz
+﻿using FizzBuzz.Parameters;
+
+namespace FizzBuzz.NumberProcessor
 {
     internal class BuzzProcessor : INumberProcessor
     {
@@ -7,8 +9,8 @@
         public BuzzProcessor(FizzAndBuzzParameters parameters) =>
             _parameters = parameters;
         public string? Process(int i) =>
-             (i % _parameters.BuzzNumber == 0)
+             i % _parameters.BuzzNumber == 0
                 ? _parameters.BuzzString
                 : null;
-        }
+    }
 }
