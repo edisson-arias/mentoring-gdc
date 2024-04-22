@@ -4,29 +4,30 @@
 
 using FizzBuzz;
 
-var parameters = ParametersProcessor.Get();
-for (var i = 1; i <= parameters.TargetNumber; i++)
-{
-    if (i % parameters.FizzNumber == 0 && i % parameters.BuzzNumber != 0)
-    {
-        Console.WriteLine(parameters.FizzString);
-    }
-    if (i % parameters.BuzzNumber == 0 &&
-        i % parameters.FizzNumber != 0) 
-    {
-        Console.WriteLine(parameters.BuzzString);
-    }
-    if ((i % parameters.FizzNumber == 0) &&
-        i % parameters.BuzzNumber == 0)
-    { 
-        Console.WriteLine($"{parameters.FizzString}{parameters.BuzzString}");
-    }
+var targetNumber = new ParametersProcessor().TargetNumber;
 
-    if ((i % parameters.FizzNumber != 0) &&
-    i % parameters.BuzzNumber != 0)
-    {
-        Console.WriteLine(i);
+// for odd and even
+INumberProcessor[] processors = new INumberProcessor[] { new OddProcessor(), new EvenProcessor() };
+//for fizz and buzz
+
+
+//var fizzAndBuzzParameters = new FizzAndBuzzParametersProcessor().GetFizzAndBuzzParameters();
+INumberProcessor[] processors = new INumberProcessor[] { new FizzProcessor(fizzAndBuzzParameters), new BuzzProcessor(fizzAndBuzzParameters) };
+
+for (var i = 1; i <= targetNumber; i++)
+{
+    var currentNumberResult= string.Empty;
+    foreach (var processor in processors)
+    { 
+        var processorResult = processor.Process(i);
+        if (!string.IsNullOrEmpty(processorResult))
+        {
+            currentNumberResult += processorResult;
+        }
     }
+    Console.WriteLine(currentNumberResult == string.Empty
+        ? i 
+        : currentNumberResult);
 }
 
 Console.ReadLine();
