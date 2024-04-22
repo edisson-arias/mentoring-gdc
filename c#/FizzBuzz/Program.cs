@@ -12,8 +12,8 @@ var targetNumber = new ParametersProcessor().TargetNumber;
 //for fizz and buzz
 
 
-var fizzAndBuzzParameters = new FizzAndBuzzParametersProcessor().GetFizzAndBuzzParameters();
-INumberProcessor[] processors = new INumberProcessor[] { new FizzProcessor(fizzAndBuzzParameters), new BuzzProcessor(fizzAndBuzzParameters) };
+var fizzAndBuzzParametersProcessor = new FizzAndBuzzParametersProcessor();
+INumberProcessor[] processors = new INumberProcessor[] { new FizzProcessor(fizzAndBuzzParametersProcessor), new BuzzProcessor(fizzAndBuzzParametersProcessor) };
 
 for (var i = 1; i <= targetNumber; i++)
 {

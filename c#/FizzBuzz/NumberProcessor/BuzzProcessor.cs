@@ -4,13 +4,13 @@ namespace FizzBuzz.NumberProcessor
 {
     internal class BuzzProcessor : INumberProcessor
     {
-        private readonly FizzAndBuzzParameters _parameters;
+        private readonly FizzAndBuzzParametersProcessor _parametersProcessor;
 
-        public BuzzProcessor(FizzAndBuzzParameters parameters) =>
-            _parameters = parameters;
+        public BuzzProcessor(FizzAndBuzzParametersProcessor parametersProcessor) =>
+            _parametersProcessor = parametersProcessor;
         public string? Process(int i) =>
-             i % _parameters.BuzzNumber == 0
-                ? _parameters.BuzzString
+             i % _parametersProcessor.Parameters.BuzzNumber == 0
+                ? _parametersProcessor.Parameters.BuzzString
                 : null;
     }
 }
