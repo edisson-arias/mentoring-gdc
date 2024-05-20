@@ -1,8 +1,9 @@
-﻿using FizzBuzz.Parameters;
+﻿using FizzBuzz.BusinessLayer;
+using FizzBuzz.Parameters;
 
 namespace FizzBuzz.NumberProcessor
 {
-    internal class FizzProcessor : INumberProcessor
+    public class FizzProcessor : INumberProcessor
     {
         private readonly FizzAndBuzzParametersProcessor _parametersProcessor;
 

@@ -1,6 +1,6 @@
 ﻿namespace FizzBuzz.Parameters
 {
-    internal interface IFizzAndBuzzParametersProcessor
+    public interface IFizzAndBuzzParametersProcessor
     {
         FizzAndBuzzParameters Parameters { get; }
     }

@@ -1,4 +1,6 @@
-﻿namespace FizzBuzz.NumberProcessor
+﻿using FizzBuzz.BusinessLayer;
+
+namespace FizzBuzz.NumberProcessor
 {
     internal class EvenProcessor : INumberProcessor
     {

@@ -1,6 +1,6 @@
 ﻿namespace FizzBuzz.Parameters
 {
-    internal class FizzAndBuzzParametersProcessor : IFizzAndBuzzParametersProcessor
+    public class FizzAndBuzzParametersProcessor : IFizzAndBuzzParametersProcessor
     {
         private FizzAndBuzzParameters _parameters = new();
         bool _isPopulated = false;

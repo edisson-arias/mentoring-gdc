@@ -1,7 +1,7 @@
 ﻿namespace FizzBuzz.Parameters
 {
 
-    internal class FizzAndBuzzParameters
+    public class FizzAndBuzzParameters
     {
         public FizzAndBuzzParameters()
         {
