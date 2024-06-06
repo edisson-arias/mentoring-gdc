@@ -1,25 +1,26 @@
+package Utilities;
 import java.util.Scanner;
 
-public class inputHandler {
+public class InputHandler {
     private Scanner userInput;
-    private Validator validator = new Validator();
-    
 
-    public inputHandler() {
+    Validator validator = new Validator();
+    
+    public InputHandler() {
         userInput = new Scanner(System.in);
     }
 
-    public String getRawInput() {
+    public String getUserInput() {
         return userInput.nextLine();
     }
 
-
-    public int getSetupInputInt() {
+    public int getInputAsInteger()
+    {
         boolean loopGuard = true;
         String current;
         int result = -1;
-        while(loopGuard) {                                                     
-            current = getRawInput();
+        while(loopGuard) {                                                      
+            current = getUserInput();
                 if(validator.isNumValid(current)) {
                     result = Integer.parseInt(current);
                     loopGuard = false;
@@ -30,17 +31,14 @@ public class inputHandler {
         return result;
     }
 
-    public String getSetupInputString() {
+    public String getInputAsString()
+    {
         boolean loopGuard = true;
         String current;
-        String result = "";
-        
-        while(loopGuard) {                                                     
-            current = getRawInput();
+        String result = "null";
+        while(loopGuard) {                                                      
+            current = getUserInput();
                 if(validator.isStringValid(current)) {
-
-                        result = current;
-                    
                     result = current;
                     loopGuard = false;
                 } else {
