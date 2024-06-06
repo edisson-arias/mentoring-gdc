@@ -48,6 +48,14 @@ public class InputHandler {
         return result;
     }
 
+    public void clearConsole() {
+        try {
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
 
     
 }

@@ -5,6 +5,30 @@ public class OutputHandler {
         System.out.println(message);
     }
 
+    public void appChoose() {
+        System.out.println("=================== CHOOSE YOUR APPLICATION ===================");
+        System.out.println(
+            "  ______     ____            \r\n" + //
+            " |  ____|   |  _ \\        \r\n" + //
+            " | |__      | |_) |   \r\n" + //
+            " |  __|     |  _ <      \r\n" + //
+            " | |        | |_) |      \r\n" + //
+            " |_|        |_____/           "
+        );
+        System.out.println("-----------------------------------------------------------");
+        System.out.println(
+            "  ______      _____                              \r\n" + //
+            " |  ____|    / ___ \\         \r\n" + //
+            " | |__      | |   | |       \r\n" + //
+            " |  __|     | |   | |                            \r\n" + //
+            " | |____    | |___| |                       \r\n" + //
+            " |______|    \\_____/                   "
+        );
+        System.out.println("-----------------------------------------------------------");
+        System.out.println("Enter 'FB' to play FizzBuzz || Enter 'exit' to exit the application");
+        System.out.println("Enter 'EO' to play EvenOdd");
+    }
+
     public void welcomeMsg(String gameMode) {
         System.out.println("=================== WELCOME TO " + gameMode.toUpperCase() + " ===================");
         System.out.println("-----------------------------------------------------------");
