@@ -43,10 +43,6 @@ public class FizzBuzzGame implements Game {
         output.setMsg(data.getFizzName());
     }
 
-
-    
-    
-
     public void startGame() {
 
         Phase1();

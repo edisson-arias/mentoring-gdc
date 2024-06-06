@@ -17,7 +17,7 @@ public class App {
                 
                 if(userInput.equals("FB") || userInput.equals("fb")) {
                     startupInput.clearConsole();
-                    fizzBuzz.startGame();
+                    fizzBuzz.startGame();                                                       // START GAME
                     break;
 
                 } else if(userInput.equals("EO") || userInput.equals("eo")) {
@@ -27,7 +27,7 @@ public class App {
                 } else if(userInput.equals("exit")) {
                     startupOutput.print("Exiting Application");
                     System.exit(0);
-                    
+
                 } else {
                     startupOutput.error();
                 }
